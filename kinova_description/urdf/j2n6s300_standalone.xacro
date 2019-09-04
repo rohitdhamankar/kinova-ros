@@ -30,6 +30,40 @@
     <origin xyz="0 0 0" rpy="0 0 0" />    
   </joint> 
 
+
+<link name="camera">
+  <collision>
+    <origin xyz="0 0 1" rpy="0 ${pi/2} 0"/>
+    <geometry>
+      <box size=".1 .1 .1"/>
+    </geometry>
+  </collision>
+  
+<visual>
+    <origin xyz="0 0 1" rpy="0 0 0"/>
+    <geometry>
+      <box size=".1 .1 .1"/>
+    </geometry>
+    <material name="Blue"/>
+  </visual>
+
+  <inertial>
+    <mass value="2" />
+    <origin xyz="0 0 1" rpy="0 ${pi/2} 0"/>
+    <box_inertia m=".2" x=".1" y=".1" z=".1" />
+<inertia
+        ixx="1.0" ixy="0.0" ixz="0.0"
+        iyy="1.0" iyz="0.0"
+        izz="1.0"/>
+  </inertial>
+</link>
+
+  <joint name="connect_root_and_camera" type="fixed">
+    <child link="camera" />
+    <parent link="root" />
+    <origin xyz="0 0 1" rpy="0 ${pi/2} 0" />    
+  </joint> 
+
   <xacro:property name="robot_root" value="root" />
 
   <xacro:j2n6s300  base_parent="${robot_root}"/>

@@ -137,6 +137,4 @@
 
     <xacro:kinova_3fingers link_hand="${prefix}_link_6" prefix="${prefix}_"/>		
     </xacro:macro>
- 
-
 </root>

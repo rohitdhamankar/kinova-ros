@@ -2,7 +2,7 @@
 
   <param name="robot_type" value="j2n6s300" />
   <param name="robot_connected" value="false" />
-	<param name="/pick_place_demo/arm/solve_type" value="Manipulation2" />
+  <param name="/pick_place_demo/arm/solve_type" value="Manipulation2" />
 
   <!-- By default, we do not start a database (it can be large) -->
   <arg name="db" default="false" />
@@ -29,7 +29,7 @@
   </node>
 
   <!-- Given the published joint states, publish tf for the robot links -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+  <node name="robot_state_pub" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
 
   <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(find j2n6s300_moveit_config)/launch/move_group.launch">
